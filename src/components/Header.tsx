@@ -24,16 +24,16 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
           <div className="flex items-center space-x-4 mb-2 md:mb-0">
             <div className="flex items-center">
               <Phone size={16} className="mr-2" />
-              <a href="tel:+17804567890" className="hover:underline">780-456-7890</a>
+              <a href="tel:5875681929" className="hover:underline">587-568-1929</a>
             </div>
             <div className="flex items-center">
               <MapPin size={16} className="mr-2" />
-              <span>123 Medical Drive, Edmonton, AB</span>
+              <span>Edmonton, Alberta, Canada</span>
             </div>
           </div>
           <div className="flex items-center">
             <Clock size={16} className="mr-2" />
-            <span>Mon-Fri: 8am-6pm | Sat: 9am-2pm | Sun: Closed</span>
+            <span>Mon-Fri: 8am-6pm | Sat: 9am-3pm | Sun: Closed</span>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-blue-600">Grace Family Medical Clinic</span>
+            <span className="text-2xl font-bold text-blue-600">Carpet Installers Edmonton</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,23 +51,23 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
               Home
             </NavLink>
             <NavLink to="/about" className={({ isActive }) => isActive ? activeClass : inactiveClass}>
-              About Us
+              Carpet Installation Edmonton
             </NavLink>
             <NavLink to="/doctors" className={({ isActive }) => isActive ? activeClass : inactiveClass}>
-              Our Doctors
+              Stair Carpet Installation
             </NavLink>
             <NavLink to="/services" className={({ isActive }) => isActive ? activeClass : inactiveClass}>
-              Services
+              Carpet Repair
             </NavLink>
             <NavLink to="/blog" className={({ isActive }) => isActive ? activeClass : inactiveClass}>
-              Blog
+              Commercial Carpet Installation
             </NavLink>
             <NavLink to="/contact" className={({ isActive }) => isActive ? activeClass : inactiveClass}>
               Contact
             </NavLink>
           </nav>
 
-          {/* Book Appointment Button */}
+          {/* Quote Request Button */}
           <div className="hidden md:block">
             {onBookAppointmentClick ? (
               <button
@@ -75,11 +75,11 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
                 onClick={onBookAppointmentClick}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition duration-300"
               >
-                Book Appointment
+                Get Free Quote
               </button>
             ) : (
               <Link to="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition duration-300">
-                Book Appointment
+                Get Free Quote
               </Link>
             )}
           </div>
@@ -109,28 +109,28 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
                 className={({ isActive }) => `block px-2 py-1 ${isActive ? activeClass : inactiveClass}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                About Us
+                Carpet Installation Edmonton
               </NavLink>
               <NavLink 
                 to="/doctors" 
                 className={({ isActive }) => `block px-2 py-1 ${isActive ? activeClass : inactiveClass}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Our Doctors
+                Stair Carpet Installation
               </NavLink>
               <NavLink 
                 to="/services" 
                 className={({ isActive }) => `block px-2 py-1 ${isActive ? activeClass : inactiveClass}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Services
+                Carpet Repair
               </NavLink>
               <NavLink 
                 to="/blog" 
                 className={({ isActive }) => `block px-2 py-1 ${isActive ? activeClass : inactiveClass}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Blog
+                Commercial Carpet Installation
               </NavLink>
               <NavLink 
                 to="/contact" 
@@ -148,7 +148,7 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
                     onBookAppointmentClick();
                   }}
                 >
-                  Book Appointment
+                  Get Free Quote
                 </button>
               ) : (
                 <Link 
@@ -156,7 +156,7 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
                   className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition duration-300 text-center"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Book Appointment
+                  Get Free Quote
                 </Link>
               )}
             </div>

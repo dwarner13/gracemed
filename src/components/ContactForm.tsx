@@ -35,9 +35,9 @@ const ContactForm = () => {
       {isSubmitted ? (
         <div className="flex flex-col items-center justify-center py-6">
           <CheckCircle size={42} className="text-green-500 mb-3" />
-          <h3 className="text-lg font-semibold text-gray-800 mb-1">Thank You!</h3>
+          <h3 className="text-lg font-semibold text-gray-800 mb-1">Thanks for your request!</h3>
           <p className="text-sm text-gray-600 text-center">
-            Your message has been sent successfully. We'll get back to you as soon as possible.
+            Your quote request has been sent successfully. We will get back to you shortly.
           </p>
         </div>
       ) : (
@@ -95,13 +95,13 @@ const ContactForm = () => {
             
             <div>
               <label htmlFor="subject" className="block text-sm text-gray-700 font-medium mb-1">
-                Subject *
+                Service Needed *
               </label>
               <input
                 type="text"
                 id="subject"
                 className={`w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.subject ? 'border-red-500' : 'border-gray-300'}`}
-                {...register('subject', { required: 'Subject is required' })}
+                {...register('subject', { required: 'Service selection is required' })}
               />
               {errors.subject && (
                 <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>
@@ -128,7 +128,7 @@ const ContactForm = () => {
             type="submit"
             className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-md font-medium text-sm transition duration-300"
           >
-            Send Message
+            Request Quote
           </button>
         </form>
       )}

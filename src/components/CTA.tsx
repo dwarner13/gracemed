@@ -12,9 +12,9 @@ interface CTAProps {
 }
 
 const CTA = ({
-  title = "Ready to Schedule Your Appointment?",
-  subtitle = "Our team of healthcare professionals is here to provide you with the best medical care.",
-  buttonText = "Book an Appointment",
+  title = "Ready for Professional Carpet Installation in Edmonton?",
+  subtitle = "Our team provides reliable carpet installation, repair, and replacement services across Edmonton.",
+  buttonText = "Get Free Quote",
   buttonLink = "/contact",
   showPhone = true,
   onButtonClick
@@ -44,11 +44,11 @@ const CTA = ({
           
           {showPhone && (
             <a 
-              href="tel:+17804567890" 
+              href="tel:5875681929" 
               className="flex items-center text-white border-2 border-white hover:bg-blue-700 px-8 py-3 rounded-md font-medium text-lg transition duration-300"
             >
               <Phone size={20} className="mr-2" />
-              Call 780-456-7890
+              Call 587-568-1929
             </a>
           )}
         </div>

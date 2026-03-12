@@ -24,7 +24,7 @@ const DoctorCard = ({
       <div className="md:w-1/3">
         <img 
           src={image} 
-          alt={`Dr. ${name}`} 
+          alt={name} 
           className="w-full h-64 md:h-full object-cover"
         />
       </div>
@@ -33,7 +33,7 @@ const DoctorCard = ({
         <p className="text-blue-600 font-medium mb-3">{title}</p>
         
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-gray-700 mb-1">Specialties</h4>
+          <h4 className="text-sm font-semibold text-gray-700 mb-1">Service Focus</h4>
           <div className="flex flex-wrap gap-2">
             {specialties.map((specialty, index) => (
               <span 
@@ -50,7 +50,7 @@ const DoctorCard = ({
         
         {education && education.length > 0 && (
           <div className="mb-4">
-            <h4 className="text-sm font-semibold text-gray-700 mb-1">Education</h4>
+            <h4 className="text-sm font-semibold text-gray-700 mb-1">Project Details</h4>
             <ul className="list-disc list-inside text-gray-600 text-sm">
               {education.map((edu, index) => (
                 <li key={index}>{edu}</li>

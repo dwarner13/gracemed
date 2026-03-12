@@ -17,27 +17,26 @@ const SEO = ({
   canonicalUrl,
   keywords,
   ogType = 'website',
-  ogImage = '/images/grace-family-medical-clinic-og.jpg',
+  ogImage = '/images/carpet-installation-edmonton-og.jpg',
   schemaData,
 }: SEOProps) => {
-  const siteUrl = 'https://gracefamilymedicalclinic.com';
+  const siteUrl = 'https://carpetinstallationedmonton.ca';
   const fullCanonicalUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : siteUrl;
   const fullOgImageUrl = `${siteUrl}${ogImage}`;
   
-  // Default schema for medical clinic
+  // Default schema for local carpet installation business
   const defaultSchema = {
     '@context': 'https://schema.org',
-    '@type': 'MedicalClinic',
-    name: 'Grace Family Medical Clinic',
-    description: 'Family medical clinic in Edmonton providing comprehensive healthcare services.',
+    '@type': 'LocalBusiness',
+    name: 'Carpet Installers Edmonton',
+    description: 'Professional carpet installation, stair carpet installation, carpet repair, and commercial carpet installation in Edmonton.',
     url: siteUrl,
-    telephone: '+17804567890',
+    telephone: '587-568-1929',
+    email: 'carpetinstallersedmonton@gmail.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '123 Medical Drive',
       addressLocality: 'Edmonton',
       addressRegion: 'AB',
-      postalCode: 'T5J 1A1',
       addressCountry: 'CA'
     },
     geo: {
@@ -56,13 +55,19 @@ const SEO = ({
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: 'Saturday',
         opens: '09:00',
-        closes: '14:00'
+        closes: '15:00'
       }
     ],
-    medicalSpecialty: [
-      'Family Medicine',
-      'Primary Care',
-      'Preventative Medicine'
+    areaServed: [
+      'Edmonton',
+      'St. Albert',
+      'Sherwood Park'
+    ],
+    makesOffer: [
+      'Carpet Installation Edmonton',
+      'Stair Carpet Installation',
+      'Carpet Repair',
+      'Commercial Carpet Installation'
     ]
   };
 

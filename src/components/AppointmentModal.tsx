@@ -39,14 +39,14 @@ const AppointmentModal = ({ isOpen, onClose }: AppointmentModalProps) => {
         <button
           type="button"
           onClick={onClose}
-          aria-label="Close appointment form"
+          aria-label="Close quote request form"
           className="absolute right-3 top-3 rounded-md p-1 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
         >
           <X size={20} />
         </button>
 
         <div className="px-4 pt-5 pb-2 md:px-5 md:pt-6">
-          <h2 className="text-2xl font-bold text-gray-900">New Client</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Request a Free Quote</h2>
           <p className="mt-1 text-sm text-gray-600">
             Fill out this quick form and our team will contact you shortly.
           </p>

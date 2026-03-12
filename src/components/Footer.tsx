@@ -9,10 +9,10 @@ const Footer = () => {
     <footer className="bg-gray-800 text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Clinic Info */}
+          {/* Company Info */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Grace Family Medical Clinic</h3>
-            <p className="mb-4 text-gray-300">Providing quality healthcare services to the Edmonton community since 2005.</p>
+            <h3 className="text-xl font-semibold mb-4">Carpet Installers Edmonton</h3>
+            <p className="mb-4 text-gray-300">Providing professional carpet installation and repair services across Edmonton.</p>
             <div className="flex space-x-4">
               <a href="https://facebook.com" className="text-gray-300 hover:text-white transition-colors">
                 <Facebook size={20} />
@@ -37,16 +37,16 @@ const Footer = () => {
                 <Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link>
+                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">Carpet Installation Edmonton</Link>
               </li>
               <li>
-                <Link to="/doctors" className="text-gray-300 hover:text-white transition-colors">Our Doctors</Link>
+                <Link to="/doctors" className="text-gray-300 hover:text-white transition-colors">Stair Carpet Installation</Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link>
+                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">Carpet Repair</Link>
               </li>
               <li>
-                <Link to="/blog" className="text-gray-300 hover:text-white transition-colors">Blog</Link>
+                <Link to="/blog" className="text-gray-300 hover:text-white transition-colors">Commercial Carpet Installation</Link>
               </li>
               <li>
                 <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link>
@@ -59,28 +59,22 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/services/family-medicine-edmonton" className="text-gray-300 hover:text-white transition-colors">Family Medicine</Link>
+                <Link to="/services/carpet-installation-edmonton" className="text-gray-300 hover:text-white transition-colors">Carpet Installation Edmonton</Link>
               </li>
               <li>
-                <Link to="/services/walk-in-clinic-edmonton" className="text-gray-300 hover:text-white transition-colors">Walk-in Clinic</Link>
+                <Link to="/services/stair-carpet-installation-edmonton" className="text-gray-300 hover:text-white transition-colors">Stair Carpet Installation</Link>
               </li>
               <li>
-                <Link to="/services/preventative-care-edmonton" className="text-gray-300 hover:text-white transition-colors">Preventative Care</Link>
+                <Link to="/services/carpet-repair-edmonton" className="text-gray-300 hover:text-white transition-colors">Carpet Repair</Link>
               </li>
               <li>
-                <Link to="/services/chronic-disease-management-edmonton" className="text-gray-300 hover:text-white transition-colors">Chronic Disease Management</Link>
+                <Link to="/services/commercial-carpet-installation-edmonton" className="text-gray-300 hover:text-white transition-colors">Commercial Carpet Installation</Link>
               </li>
               <li>
-                <Link to="/services/womens-health-edmonton" className="text-gray-300 hover:text-white transition-colors">Women's Health</Link>
+                <Link to="/services/carpet-replacement-edmonton" className="text-gray-300 hover:text-white transition-colors">Carpet Replacement</Link>
               </li>
               <li>
-                <Link to="/services/pediatric-care-edmonton" className="text-gray-300 hover:text-white transition-colors">Pediatric Care</Link>
-              </li>
-              <li>
-                <Link to="/services/wcb-claims-support-edmonton" className="text-gray-300 hover:text-white transition-colors">WCB Claims Support</Link>
-              </li>
-              <li>
-                <Link to="/services/occupational-injury-service-edmonton" className="text-gray-300 hover:text-white transition-colors">Occupational Injury Service (OIS)</Link>
+                <Link to="/services/residential-carpet-installation-edmonton" className="text-gray-300 hover:text-white transition-colors">Residential Carpet Installation</Link>
               </li>
             </ul>
           </div>
@@ -91,21 +85,21 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin size={20} className="mr-2 mt-1 flex-shrink-0" />
-                <span>123 Medical Drive, Edmonton, AB T5J 1A1</span>
+                <span>Edmonton, Alberta, Canada</span>
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="mr-2 flex-shrink-0" />
-                <a href="tel:+17804567890" className="hover:underline">780-456-7890</a>
+                <a href="tel:5875681929" className="hover:underline">587-568-1929</a>
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="mr-2 flex-shrink-0" />
-                <a href="mailto:info@gracefamilymedicalclinic.com" className="hover:underline">info@gracefamilymedicalclinic.com</a>
+                <a href="mailto:carpetinstallersedmonton@gmail.com" className="hover:underline">carpetinstallersedmonton@gmail.com</a>
               </li>
               <li className="flex items-start">
                 <Clock size={20} className="mr-2 mt-1 flex-shrink-0" />
                 <div>
                   <p>Monday-Friday: 8am-6pm</p>
-                  <p>Saturday: 9am-2pm</p>
+                  <p>Saturday: 9am-3pm</p>
                   <p>Sunday: Closed</p>
                 </div>
               </li>
@@ -117,7 +111,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {currentYear} Grace Family Medical Clinic. All rights reserved.
+            &copy; {currentYear} Carpet Installers Edmonton. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0">
             <ul className="flex space-x-6 text-sm text-gray-400">

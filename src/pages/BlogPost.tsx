@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import SEO from '../components/SEO';
 import CTA from '../components/CTA';
+import BlogCard from '../components/BlogCard';
 import { blogPosts } from '../data/blogs';
 import { Calendar, User, ArrowLeft } from 'lucide-react';
 
@@ -61,7 +62,7 @@ const BlogPost = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Link to="/blog" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8">
-              <ArrowLeft size={20} className="mr-2" /> Back to Blog
+              <ArrowLeft size={20} className="mr-2" /> Back to Commercial Carpet Page
             </Link>
             
             <div className="mb-8">
@@ -95,7 +96,7 @@ const BlogPost = () => {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-gray-800 mb-8">Related Articles</h2>
+              <h2 className="text-3xl font-bold text-gray-800 mb-8">Related Commercial Carpet Topics</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {relatedPosts.map((relatedPost) => (
@@ -118,8 +119,8 @@ const BlogPost = () => {
 
       {/* CTA Section */}
       <CTA 
-        title="Have Questions About Your Health?" 
-        subtitle="Schedule an appointment with one of our healthcare providers to discuss your health concerns."
+        title="Need Help With Your Carpet Project?" 
+        subtitle="Contact Carpet Installation Edmonton for expert recommendations and a detailed quote."
       />
     </HelmetProvider>
   );

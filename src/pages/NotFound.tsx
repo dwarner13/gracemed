@@ -8,8 +8,8 @@ const NotFound = () => {
   return (
     <HelmetProvider>
       <SEO 
-        title="Page Not Found | Grace Family Medical Clinic"
-        description="The page you are looking for could not be found. Please navigate to our homepage or contact us for assistance."
+        title="Page Not Found | Carpet Installation Edmonton"
+        description="The page you are looking for could not be found. Visit our homepage or contact Carpet Installation Edmonton for help."
         canonicalUrl="/404"
       />
 

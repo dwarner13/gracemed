@@ -9,9 +9,9 @@ const Services = () => {
   return (
     <HelmetProvider>
       <SEO 
-        title="Our Services | Grace Family Medical Clinic Edmonton"
-        description="Comprehensive healthcare services offered at Grace Family Medical Clinic in Edmonton. Family medicine, preventative care, chronic disease management, and more."
-        keywords="medical services Edmonton, family medicine, walk-in clinic, preventative care, chronic disease management, Edmonton healthcare"
+        title="Carpet Repair Edmonton | Stretching, Seams & Patch Repair"
+        description="Professional carpet repair in Edmonton including carpet stretching, seam repair, patching, and damage restoration for homes and businesses."
+        keywords="carpet repair Edmonton, carpet stretching Edmonton, carpet seam repair Edmonton, carpet patch repair Edmonton"
         canonicalUrl="/services"
       />
 
@@ -19,8 +19,8 @@ const Services = () => {
       <section className="bg-blue-600 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl font-bold mb-4">Our Services</h1>
-            <p className="text-xl">Comprehensive healthcare services for you and your family at every stage of life.</p>
+            <h1 className="text-4xl font-bold mb-4">Carpet Repair Edmonton</h1>
+            <p className="text-xl">Restore the look and performance of your carpet with professional repair services in Edmonton.</p>
           </div>
         </div>
       </section>
@@ -29,8 +29,8 @@ const Services = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Comprehensive Healthcare Services</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">At Grace Family Medical Clinic, we offer a wide range of medical services to meet the diverse healthcare needs of our Edmonton community.</p>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Complete Carpet Services in Edmonton</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">From new carpet installation to targeted carpet repair, we provide practical flooring solutions for Edmonton properties.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -47,20 +47,20 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Patient-Centered Approach */}
+      {/* Repair Process */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Patient-Centered Approach</h2>
-              <p className="text-gray-600 mb-4">At Grace Family Medical Clinic, we believe in a patient-centered approach to healthcare. This means we focus on building long-term relationships with our patients, taking the time to listen to your concerns, and involving you in decisions about your health.</p>
-              <p className="text-gray-600 mb-4">Our goal is not just to treat illness, but to promote overall wellness and help you achieve optimal health. We work with you to develop personalized care plans that address your unique health needs and goals.</p>
-              <p className="text-gray-600">Whether you're seeking preventative care, treatment for an acute illness, or management of a chronic condition, our team is here to provide compassionate, comprehensive care that puts you first.</p>
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Carpet Repair Process in Edmonton</h2>
+              <p className="text-gray-600 mb-4">We begin with a clear assessment of wear, ripples, seam separation, or damage so you understand what can be repaired and what should be replaced.</p>
+              <p className="text-gray-600 mb-4">Next, our team completes the repair using proven techniques and matching materials whenever possible to blend the fixed area with the existing carpet.</p>
+              <p className="text-gray-600">Every repair is finished with cleanup and a walkthrough so you know exactly what was done and how to maintain the result.</p>
             </div>
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
-                alt="Doctor consulting with patient" 
+                src="https://images.unsplash.com/photo-1764141011737-d7b2bd824454?auto=format&fit=crop&w=1350&q=80" 
+                alt="Carpet repair service in Edmonton" 
                 className="rounded-lg shadow-lg"
               />
             </div>
@@ -68,33 +68,33 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Insurance & Payment */}
+      {/* Carpet Repair Details */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Insurance & Payment Information</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">We strive to make healthcare accessible and affordable for our patients.</p>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">What We Repair</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Targeted carpet repair services designed for Edmonton homes, rental properties, and commercial interiors.</p>
           </div>
           
           <div className="bg-white p-8 rounded-lg shadow-md">
             <div className="mb-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-3">Alberta Health Care</h3>
-              <p className="text-gray-600">Most of our services are covered by Alberta Health Care Insurance Plan (AHCIP). Please bring your Alberta Health Care card to each visit.</p>
+              <h3 className="text-xl font-semibold text-blue-600 mb-3">Carpet Stretching</h3>
+              <p className="text-gray-600">Remove bumps and ripples that create tripping hazards and premature wear in high-traffic areas.</p>
             </div>
             
             <div className="mb-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-3">Private Insurance</h3>
-              <p className="text-gray-600">For services not covered by Alberta Health Care, we accept most private insurance plans. We recommend contacting your insurance provider to verify coverage for specific services.</p>
+              <h3 className="text-xl font-semibold text-blue-600 mb-3">Seam Repair</h3>
+              <p className="text-gray-600">Repair or replace failing seams to prevent further fraying and keep your carpet looking uniform.</p>
             </div>
             
             <div className="mb-6">
-              <h3 className="text-xl font-semibold text-blue-600 mb-3">Payment Options</h3>
-              <p className="text-gray-600">For services not covered by insurance, we accept payment by cash, debit, and major credit cards. Payment is expected at the time of service.</p>
+              <h3 className="text-xl font-semibold text-blue-600 mb-3">Patch & Burn Repair</h3>
+              <p className="text-gray-600">Local patching for stains, pet damage, and burns using donor carpet when available.</p>
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold text-blue-600 mb-3">Uninsured Patients</h3>
-              <p className="text-gray-600">If you don't have Alberta Health Care or private insurance, please contact our office to discuss payment options. We are committed to providing care for all patients in our community.</p>
+              <h3 className="text-xl font-semibold text-blue-600 mb-3">Transition & Edge Fixes</h3>
+              <p className="text-gray-600">Secure thresholds and edge transitions to improve safety, durability, and finish quality.</p>
             </div>
           </div>
         </div>
@@ -102,8 +102,8 @@ const Services = () => {
 
       {/* CTA Section */}
       <CTA 
-        title="Ready to Schedule Your Appointment?" 
-        subtitle="Contact us today to book an appointment for any of our comprehensive healthcare services."
+        title="Need Carpet Repair in Edmonton?" 
+        subtitle="Contact us today for a fast quote on stretching, seam repair, and carpet damage restoration."
       />
     </HelmetProvider>
   );

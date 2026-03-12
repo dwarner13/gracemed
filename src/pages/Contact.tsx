@@ -8,9 +8,9 @@ const Contact = () => {
   return (
     <HelmetProvider>
       <SEO 
-        title="Contact Us | Grace Family Medical Clinic Edmonton"
-        description="Contact Grace Family Medical Clinic in Edmonton. Book appointments, find our location, and get in touch with our healthcare team."
-        keywords="contact doctor Edmonton, book appointment Edmonton, medical clinic contact, Edmonton healthcare contact"
+        title="Contact Carpet Installers Edmonton | Free Quotes"
+        description="Contact Carpet Installers Edmonton for carpet installation, stair carpet installation, carpet repair, and commercial carpet quotes in Edmonton."
+        keywords="contact carpet installer Edmonton, carpet quote Edmonton, carpet repair contact Edmonton, commercial carpet quote"
         canonicalUrl="/contact"
       />
 
@@ -18,8 +18,8 @@ const Contact = () => {
       <section className="bg-blue-600 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-            <p className="text-xl">Get in touch with our team to schedule appointments, ask questions, or learn more about our services.</p>
+            <h1 className="text-4xl font-bold mb-4">Contact Carpet Installers Edmonton</h1>
+            <p className="text-xl">Get in touch for carpet installation, stair carpet installation, carpet repair, and commercial flooring quotes in Edmonton.</p>
           </div>
         </div>
       </section>
@@ -31,7 +31,7 @@ const Contact = () => {
             {/* Contact Information */}
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Get In Touch</h2>
-              <p className="text-gray-600 mb-8">We're here to help with any questions you may have about our services or to schedule an appointment. Reach out to us using any of the methods below.</p>
+              <p className="text-gray-600 mb-8">Tell us about your project and we will provide a clear quote, timeline, and service recommendations for your Edmonton property.</p>
               
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -41,7 +41,7 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-1">Phone</h3>
                     <p className="text-gray-600">
-                      <a href="tel:+17804567890" className="hover:text-blue-600">780-456-7890</a>
+                      <a href="tel:5875681929" className="hover:text-blue-600">587-568-1929</a>
                     </p>
                   </div>
                 </div>
@@ -53,7 +53,7 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-1">Email</h3>
                     <p className="text-gray-600">
-                      <a href="mailto:info@gracefamilymedicalclinic.com" className="hover:text-blue-600">info@gracefamilymedicalclinic.com</a>
+                      <a href="mailto:carpetinstallersedmonton@gmail.com" className="hover:text-blue-600">carpetinstallersedmonton@gmail.com</a>
                     </p>
                   </div>
                 </div>
@@ -65,9 +65,7 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-1">Address</h3>
                     <p className="text-gray-600">
-                      123 Medical Drive<br />
-                      Edmonton, AB T5J 1A1<br />
-                      Canada
+                      Edmonton, Alberta, Canada
                     </p>
                   </div>
                 </div>
@@ -80,7 +78,7 @@ const Contact = () => {
                     <h3 className="text-lg font-semibold text-gray-800 mb-1">Hours</h3>
                     <div className="text-gray-600">
                       <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                      <p>Saturday: 9:00 AM - 2:00 PM</p>
+                      <p>Saturday: 9:00 AM - 3:00 PM</p>
                       <p>Sunday: Closed</p>
                     </div>
                   </div>
@@ -99,7 +97,7 @@ const Contact = () => {
                     allowFullScreen 
                     loading="lazy" 
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Grace Family Medical Clinic Location"
+                    title="Carpet Installers Edmonton Location"
                   ></iframe>
                 </div>
               </div>
@@ -107,8 +105,8 @@ const Contact = () => {
             
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
-              <p className="text-gray-600 mb-8">Have a question or want to schedule an appointment? Fill out the form below and we'll get back to you as soon as possible.</p>
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">Request a Quote</h2>
+              <p className="text-gray-600 mb-8">Share your project details and we will get back to you with next steps and pricing information.</p>
               
               <ContactForm />
             </div>
@@ -116,23 +114,23 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Appointment Information */}
+      {/* Booking Information */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Appointment Information</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Project Information</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">New Patients</h3>
-                <p className="text-gray-600 mb-4">We welcome new patients to our clinic. To schedule your first appointment, please call our office or fill out the contact form. We'll need some basic information and will help you prepare for your first visit.</p>
-                <p className="text-gray-600">For your first appointment, please arrive 15 minutes early to complete necessary paperwork. Bring your Alberta Health Care card, photo ID, and a list of current medications.</p>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">New Clients</h3>
+                <p className="text-gray-600 mb-4">For first-time projects, we gather room sizes, property type, and preferred timeline to prepare a detailed quote.</p>
+                <p className="text-gray-600">If available, include photos of the current flooring and any problem areas so we can recommend the right carpet solution.</p>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold text-blue-600 mb-3">Existing Patients</h3>
-                <p className="text-gray-600 mb-4">Existing patients can schedule appointments by phone, email, or through our online booking system. Same-day appointments are often available for urgent concerns.</p>
-                <p className="text-gray-600">If you need to cancel or reschedule an appointment, please provide at least 24 hours' notice so we can offer the time slot to another patient.</p>
+                <h3 className="text-xl font-semibold text-blue-600 mb-3">Returning Clients</h3>
+                <p className="text-gray-600 mb-4">Returning clients can request follow-up carpet repair, additional rooms, or commercial scheduling by phone or email.</p>
+                <p className="text-gray-600">Need to change your installation date? Please provide at least 24 hours' notice so we can adjust the schedule.</p>
               </div>
             </div>
           </div>
