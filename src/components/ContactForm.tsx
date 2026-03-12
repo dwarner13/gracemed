@@ -31,41 +31,41 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
+    <div className="bg-white rounded-lg shadow-md p-4 md:p-5">
       {isSubmitted ? (
-        <div className="flex flex-col items-center justify-center py-8">
-          <CheckCircle size={48} className="text-green-500 mb-4" />
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">Thank You!</h3>
-          <p className="text-gray-600 text-center">
+        <div className="flex flex-col items-center justify-center py-6">
+          <CheckCircle size={42} className="text-green-500 mb-3" />
+          <h3 className="text-lg font-semibold text-gray-800 mb-1">Thank You!</h3>
+          <p className="text-sm text-gray-600 text-center">
             Your message has been sent successfully. We'll get back to you as soon as possible.
           </p>
         </div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
             <div>
-              <label htmlFor="name" className="block text-gray-700 font-medium mb-1">
+              <label htmlFor="name" className="block text-sm text-gray-700 font-medium mb-1">
                 Full Name *
               </label>
               <input
                 type="text"
                 id="name"
-                className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+                className={`w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
                 {...register('name', { required: 'Name is required' })}
               />
               {errors.name && (
-                <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+                <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
               )}
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-gray-700 font-medium mb-1">
+              <label htmlFor="email" className="block text-sm text-gray-700 font-medium mb-1">
                 Email Address *
               </label>
               <input
                 type="email"
                 id="email"
-                className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                className={`w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
                 {...register('email', { 
                   required: 'Email is required',
                   pattern: {
@@ -75,58 +75,58 @@ const ContactForm = () => {
                 })}
               />
               {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
               )}
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
             <div>
-              <label htmlFor="phone" className="block text-gray-700 font-medium mb-1">
+              <label htmlFor="phone" className="block text-sm text-gray-700 font-medium mb-1">
                 Phone Number
               </label>
               <input
                 type="tel"
                 id="phone"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 {...register('phone')}
               />
             </div>
             
             <div>
-              <label htmlFor="subject" className="block text-gray-700 font-medium mb-1">
+              <label htmlFor="subject" className="block text-sm text-gray-700 font-medium mb-1">
                 Subject *
               </label>
               <input
                 type="text"
                 id="subject"
-                className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.subject ? 'border-red-500' : 'border-gray-300'}`}
+                className={`w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.subject ? 'border-red-500' : 'border-gray-300'}`}
                 {...register('subject', { required: 'Subject is required' })}
               />
               {errors.subject && (
-                <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
+                <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>
               )}
             </div>
           </div>
           
-          <div className="mb-4">
-            <label htmlFor="message" className="block text-gray-700 font-medium mb-1">
+          <div className="mb-3">
+            <label htmlFor="message" className="block text-sm text-gray-700 font-medium mb-1">
               Message *
             </label>
             <textarea
               id="message"
-              rows={5}
-              className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
+              rows={4}
+              className={`w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
               {...register('message', { required: 'Message is required' })}
             ></textarea>
             {errors.message && (
-              <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+              <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>
             )}
           </div>
           
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition duration-300"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-md font-medium text-sm transition duration-300"
           >
             Send Message
           </button>

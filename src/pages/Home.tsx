@@ -9,7 +9,11 @@ import { services } from '../data/services';
 import { testimonials } from '../data/testimonials';
 import { Heart, Users, Clock, Award, ArrowRight } from 'lucide-react';
 
-const Home = () => {
+interface HomeProps {
+  onBookAppointmentClick?: () => void;
+}
+
+const Home = ({ onBookAppointmentClick }: HomeProps) => {
   // Featured services (first 3)
   const featuredServices = services.slice(0, 3);
 
@@ -33,12 +37,22 @@ const Home = () => {
               <h1 className="text-4xl md:text-5xl font-bold mb-4">Your Health Is Our Priority</h1>
               <p className="text-xl mb-8">Providing compassionate, comprehensive healthcare for the entire family in Edmonton since 2005.</p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/contact" 
-                  className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-lg transition duration-300 text-center"
-                >
-                  Book an Appointment
-                </Link>
+                {onBookAppointmentClick ? (
+                  <button
+                    type="button"
+                    onClick={onBookAppointmentClick}
+                    className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-lg transition duration-300 text-center"
+                  >
+                    Book an Appointment
+                  </button>
+                ) : (
+                  <Link 
+                    to="/contact" 
+                    className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-lg transition duration-300 text-center"
+                  >
+                    Book an Appointment
+                  </Link>
+                )}
                 <Link 
                   to="/services" 
                   className="border-2 border-white text-white hover:bg-blue-700 px-6 py-3 rounded-md font-medium text-lg transition duration-300 text-center"
@@ -59,7 +73,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Why Choose Grace Family Medical Clinic</h2>
@@ -133,6 +147,48 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Workplace Injury Services Highlight */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Workplace Injuries & WCB Support</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Fast, structured care for job-related injuries with clear treatment plans and return-to-work guidance.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                <h3 className="text-xl font-semibold text-blue-600 mb-2">WCB Claims & Return-to-Work Support</h3>
+                <p className="text-gray-600 mb-4">
+                  Timely workplace injury assessments, documentation support, and practical modified-duty planning.
+                </p>
+                <Link
+                  to="/services/wcb-claims-support-edmonton"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  Learn More <ArrowRight size={18} className="ml-2" />
+                </Link>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                <h3 className="text-xl font-semibold text-blue-600 mb-2">Occupational Injury Service (OIS)</h3>
+                <p className="text-gray-600 mb-4">
+                  Focused care for work-related injuries with follow-up planning and coordinated communication.
+                </p>
+                <Link
+                  to="/services/occupational-injury-service-edmonton"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  Learn More <ArrowRight size={18} className="ml-2" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -156,7 +212,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <CTA />
+      <CTA onButtonClick={onBookAppointmentClick} />
     </HelmetProvider>
   );
 };

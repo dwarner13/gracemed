@@ -7,7 +7,9 @@ import {
   Plane, 
   Users, 
   Microscope, 
-  Activity 
+  Activity,
+  Briefcase,
+  ClipboardCheck
 } from 'lucide-react';
 import React from 'react';
 
@@ -49,7 +51,7 @@ export const services: Service[] = [
       <h3>Our Approach</h3>
       <p>We believe in a patient-centered approach to family medicine. This means we take the time to listen to your concerns, answer your questions, and involve you in decisions about your healthcare. Our goal is to empower you with the knowledge and resources you need to maintain optimal health and well-being.</p>
     `,
-    icon: <Stethoscope size={40} />,
+    icon: React.createElement(Stethoscope, { size: 40 }),
     metaTitle: "Family Medicine Services in Edmonton | Grace Family Medical Clinic",
     metaDescription: "Comprehensive family medicine services in Edmonton. Our experienced doctors provide personalized care for patients of all ages. Book an appointment today.",
     keywords: "family doctor Edmonton, family medicine Edmonton, family physician, primary care, general practitioner, Edmonton healthcare"
@@ -86,7 +88,7 @@ export const services: Service[] = [
       
       <p>No appointment necessary. Simply walk in during our operating hours, and we'll be happy to assist you.</p>
     `,
-    icon: <Clock size={40} />,
+    icon: React.createElement(Clock, { size: 40 }),
     metaTitle: "Walk-in Clinic Edmonton | No Appointment Needed | Grace Family Medical",
     metaDescription: "Convenient walk-in clinic in Edmonton with extended hours. Get prompt medical care for non-emergency conditions without an appointment.",
     keywords: "walk-in clinic Edmonton, no appointment doctor Edmonton, urgent care, same day doctor, medical clinic Edmonton"
@@ -124,7 +126,7 @@ export const services: Service[] = [
       <h3>Empowering Through Education</h3>
       <p>An important aspect of our preventative care is patient education. We provide you with the knowledge and tools you need to make informed decisions about your health and adopt lifestyle habits that promote wellness and longevity.</p>
     `,
-    icon: <HeartPulse size={40} />,
+    icon: React.createElement(HeartPulse, { size: 40 }),
     metaTitle: "Preventative Care Services Edmonton | Grace Family Medical Clinic",
     metaDescription: "Comprehensive preventative healthcare services in Edmonton. Regular check-ups, screenings, and personalized prevention plans to maintain optimal health.",
     keywords: "preventative care Edmonton, preventive medicine, health screenings, annual physical, wellness exam, disease prevention Edmonton"
@@ -171,7 +173,7 @@ export const services: Service[] = [
       <h3>Comprehensive Care Team</h3>
       <p>Our chronic disease management program involves a team of healthcare professionals working together to provide you with comprehensive care. Depending on your needs, your care team may include your family physician, nurses, dietitians, and other specialists.</p>
     `,
-    icon: <Activity size={40} />,
+    icon: React.createElement(Activity, { size: 40 }),
     metaTitle: "Chronic Disease Management Edmonton | Grace Family Medical Clinic",
     metaDescription: "Specialized chronic disease management in Edmonton. Comprehensive care for diabetes, hypertension, heart disease, asthma, and other ongoing health conditions.",
     keywords: "chronic disease management Edmonton, diabetes care, hypertension treatment, asthma management, heart disease care, chronic condition Edmonton"
@@ -212,7 +214,7 @@ export const services: Service[] = [
       <h3>Personalized Care</h3>
       <p>We understand that every woman's health needs are unique. That's why we take the time to listen to your concerns, answer your questions, and develop personalized care plans that address your specific needs and health goals.</p>
     `,
-    icon: <Users size={40} />,
+    icon: React.createElement(Users, { size: 40 }),
     metaTitle: "Women's Health Services Edmonton | Grace Family Medical Clinic",
     metaDescription: "Comprehensive women's health services in Edmonton. Well-woman exams, reproductive health, menopause management, and preventative care for women of all ages.",
     keywords: "women's health Edmonton, gynecology, well-woman exam, women's clinic, menopause treatment, reproductive health Edmonton"
@@ -255,7 +257,7 @@ export const services: Service[] = [
       <h3>Partnership with Parents</h3>
       <p>We believe in partnering with parents to ensure the best possible care for their children. We take the time to listen to your concerns, answer your questions, and provide the guidance and support you need to make informed decisions about your child's health.</p>
     `,
-    icon: <Baby size={40} />,
+    icon: React.createElement(Baby, { size: 40 }),
     metaTitle: "Pediatric Care Edmonton | Children's Healthcare | Grace Family Medical",
     metaDescription: "Comprehensive pediatric care in Edmonton for infants, children, and adolescents. Well-child visits, immunizations, illness treatment, and developmental monitoring.",
     keywords: "pediatric care Edmonton, children's doctor, well-child visits, immunizations, child healthcare, pediatrician Edmonton"
@@ -298,7 +300,7 @@ export const services: Service[] = [
       <h3>Immunization Records</h3>
       <p>We maintain complete records of all vaccinations administered at our clinic. We can provide you with documentation of your immunization history for school, work, travel, or personal records.</p>
     `,
-    icon: <Syringe size={40} />,
+    icon: React.createElement(Syringe, { size: 40 }),
     metaTitle: "Vaccination Services Edmonton | Routine & Travel Immunizations | Grace Family Medical",
     metaDescription: "Comprehensive vaccination services in Edmonton. Routine immunizations for all ages and travel vaccines to protect against preventable diseases.",
     keywords: "vaccinations Edmonton, immunizations, flu shots, travel vaccines, childhood vaccines, adult vaccines Edmonton"
@@ -345,7 +347,7 @@ export const services: Service[] = [
       <h3>Post-Travel Care</h3>
       <p>If you become ill after returning from international travel, our physicians are experienced in recognizing and treating travel-related illnesses. Contact our clinic promptly if you develop fever, persistent diarrhea, skin rashes, or other concerning symptoms after returning from abroad.</p>
     `,
-    icon: <Plane size={40} />,
+    icon: React.createElement(Plane, { size: 40 }),
     metaTitle: "Travel Medicine Edmonton | Pre-Travel Consultations & Vaccines | Grace Family Medical",
     metaDescription: "Comprehensive travel medicine services in Edmonton. Pre-travel consultations, vaccinations, and health advice for international travelers.",
     keywords: "travel medicine Edmonton, travel vaccines, pre-travel consultation, yellow fever vaccine, malaria prevention, travel health Edmonton"
@@ -392,9 +394,67 @@ export const services: Service[] = [
       <h3>Laboratory Hours</h3>
       <p>Our laboratory services are available during regular clinic hours. For some specialized tests, specific collection times may be recommended. Please check with our staff for details.</p>
     `,
-    icon: <Microscope size={40} />,
+    icon: React.createElement(Microscope, { size: 40 }),
     metaTitle: "Laboratory Services Edmonton | On-Site Medical Testing | Grace Family Medical",
     metaDescription: "Convenient on-site laboratory services in Edmonton. Blood work, urinalysis, and other diagnostic tests available at our medical clinic.",
     keywords: "laboratory services Edmonton, blood work, medical testing, diagnostic lab, urinalysis, on-site lab Edmonton"
+  },
+  {
+    id: 10,
+    title: "WCB Claims & Return-to-Work Support",
+    slug: "wcb-claims-support-edmonton",
+    shortDescription: "Workplace injury assessment, WCB documentation support, and practical modified-duty planning to help workers recover safely.",
+    fullDescription: `
+      <h2>WCB Claims Support in Edmonton</h2>
+      <p>If you have been injured at work, our clinic provides timely assessment and support for Workers' Compensation Board (WCB) related care. We help guide injured workers and employers through the medical side of the claim process with clear communication and structured follow-up.</p>
+
+      <h3>What Our WCB Support Includes</h3>
+      <ul>
+        <li>Initial assessment of work-related injuries</li>
+        <li>Completion of required medical forms and reports</li>
+        <li>Clinical recommendations for safe work restrictions</li>
+        <li>Return-to-work planning with modified duties when appropriate</li>
+        <li>Ongoing follow-up visits to monitor recovery progress</li>
+      </ul>
+
+      <h3>Our Care Approach</h3>
+      <p>We focus on both recovery and function. That means treating the injury while helping you return to work safely and realistically, based on your condition and job demands. We work with you to create a practical plan that supports healing and reduces the risk of re-injury.</p>
+
+      <h3>When to Seek Urgent Care</h3>
+      <p>For severe injuries such as chest pain, breathing difficulty, uncontrolled bleeding, or loss of consciousness, call emergency services immediately. Once stabilized, follow-up WCB care can be arranged with our team.</p>
+    `,
+    icon: React.createElement(Briefcase, { size: 40 }),
+    metaTitle: "WCB Claims Support Edmonton | Grace Family Medical Clinic",
+    metaDescription: "WCB workplace injury care in Edmonton including assessment, report support, and return-to-work planning for injured workers.",
+    keywords: "WCB Edmonton, workplace injury doctor, return to work plan, modified duties, WCB claim support"
+  },
+  {
+    id: 11,
+    title: "Occupational Injury Service (OIS)",
+    slug: "occupational-injury-service-edmonton",
+    shortDescription: "Focused care for work-related injuries with timely assessment, treatment planning, and coordinated follow-up.",
+    fullDescription: `
+      <h2>Occupational Injury Service (OIS) in Edmonton</h2>
+      <p>Our Occupational Injury Service (OIS) is designed for workers with job-related injuries who need prompt, structured care. This service supports early treatment, clear activity limitations, and coordinated next steps that help recovery and return-to-work outcomes.</p>
+
+      <h3>Key Features of OIS Care</h3>
+      <ul>
+        <li>Prompt assessment by providers experienced in occupational injuries</li>
+        <li>Same-day care planning and recommended work restrictions when possible</li>
+        <li>Coordination of follow-up appointments and progress reviews</li>
+        <li>Guidance for employers on safe modified duties</li>
+        <li>Support with documentation relevant to workplace injury management</li>
+      </ul>
+
+      <h3>Virtual OIS for Eligible Remote Workers</h3>
+      <p>For workers in remote locations with limited in-person access, virtual occupational injury follow-up may be available when clinically appropriate. In-person care remains preferred when hands-on examination or procedures are required.</p>
+
+      <h3>Important Note</h3>
+      <p>OIS is intended for non-emergency workplace injuries. If the injury is severe or life-threatening, seek emergency care first, then arrange OIS follow-up within the recommended time window.</p>
+    `,
+    icon: React.createElement(ClipboardCheck, { size: 40 }),
+    metaTitle: "Occupational Injury Service Edmonton | Grace Family Medical Clinic",
+    metaDescription: "Occupational Injury Service in Edmonton with prompt work-injury assessment, treatment planning, and return-to-work support.",
+    keywords: "OIS Edmonton, occupational injury service, workplace injury clinic, work restrictions, return to work Edmonton"
   }
 ];

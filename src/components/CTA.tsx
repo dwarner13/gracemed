@@ -8,6 +8,7 @@ interface CTAProps {
   buttonText?: string;
   buttonLink?: string;
   showPhone?: boolean;
+  onButtonClick?: () => void;
 }
 
 const CTA = ({
@@ -15,7 +16,8 @@ const CTA = ({
   subtitle = "Our team of healthcare professionals is here to provide you with the best medical care.",
   buttonText = "Book an Appointment",
   buttonLink = "/contact",
-  showPhone = true
+  showPhone = true,
+  onButtonClick
 }: CTAProps) => {
   return (
     <section className="bg-blue-600 text-white py-16">
@@ -23,12 +25,22 @@ const CTA = ({
         <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
         <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8">{subtitle}</p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <Link 
-            to={buttonLink} 
-            className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium text-lg transition duration-300"
-          >
-            {buttonText}
-          </Link>
+          {onButtonClick ? (
+            <button
+              type="button"
+              onClick={onButtonClick}
+              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium text-lg transition duration-300"
+            >
+              {buttonText}
+            </button>
+          ) : (
+            <Link 
+              to={buttonLink} 
+              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-md font-medium text-lg transition duration-300"
+            >
+              {buttonText}
+            </Link>
+          )}
           
           {showPhone && (
             <a 

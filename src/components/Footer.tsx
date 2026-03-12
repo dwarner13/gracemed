@@ -76,6 +76,12 @@ const Footer = () => {
               <li>
                 <Link to="/services/pediatric-care-edmonton" className="text-gray-300 hover:text-white transition-colors">Pediatric Care</Link>
               </li>
+              <li>
+                <Link to="/services/wcb-claims-support-edmonton" className="text-gray-300 hover:text-white transition-colors">WCB Claims Support</Link>
+              </li>
+              <li>
+                <Link to="/services/occupational-injury-service-edmonton" className="text-gray-300 hover:text-white transition-colors">Occupational Injury Service (OIS)</Link>
+              </li>
             </ul>
           </div>
 

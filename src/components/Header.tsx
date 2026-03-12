@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X, Phone, Clock, MapPin } from 'lucide-react';
 
-const Header = () => {
+interface HeaderProps {
+  onBookAppointmentClick?: () => void;
+}
+
+const Header = ({ onBookAppointmentClick }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -65,9 +69,19 @@ const Header = () => {
 
           {/* Book Appointment Button */}
           <div className="hidden md:block">
-            <Link to="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition duration-300">
-              Book Appointment
-            </Link>
+            {onBookAppointmentClick ? (
+              <button
+                type="button"
+                onClick={onBookAppointmentClick}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition duration-300"
+              >
+                Book Appointment
+              </button>
+            ) : (
+              <Link to="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition duration-300">
+                Book Appointment
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -125,13 +139,26 @@ const Header = () => {
               >
                 Contact
               </NavLink>
-              <Link 
-                to="/contact" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition duration-300 text-center"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Book Appointment
-              </Link>
+              {onBookAppointmentClick ? (
+                <button
+                  type="button"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition duration-300 text-center"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    onBookAppointmentClick();
+                  }}
+                >
+                  Book Appointment
+                </button>
+              ) : (
+                <Link 
+                  to="/contact" 
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition duration-300 text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Book Appointment
+                </Link>
+              )}
             </div>
           </nav>
         )}
