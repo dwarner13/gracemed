@@ -7,6 +7,17 @@
     <title>Vite + React + TS</title>
   </head>
   <body>
+    <!-- Hidden Netlify form for build-time detection -->
+    <form name="appointment-booking" netlify netlify-honeypot="bot-field" hidden>
+      <input name="name" />
+      <input name="phone" />
+      <input name="email" />
+      <input name="preferred-date" />
+      <input name="preferred-time" />
+      <input name="reason" />
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -31,7 +31,7 @@ const SEO = ({
     name: 'Grace Family Medical Clinic',
     description: 'Family medical clinic in Edmonton providing comprehensive healthcare services.',
     url: siteUrl,
-    telephone: '+17804567890',
+    telephone: '+17806699215',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '123 Medical Drive',
@@ -49,14 +49,14 @@ const SEO = ({
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '08:00',
-        closes: '18:00'
+        opens: '09:00',
+        closes: '19:00'
       },
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: 'Saturday',
-        opens: '09:00',
-        closes: '14:00'
+        opens: '10:00',
+        closes: '17:00'
       }
     ],
     medicalSpecialty: [

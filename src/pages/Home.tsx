@@ -35,7 +35,7 @@ const Home = ({ onBookAppointmentClick }: HomeProps) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4">Your Health Is Our Priority</h1>
-              <p className="text-xl mb-8">Providing compassionate, comprehensive healthcare for the entire family in Edmonton since 2005.</p>
+              <p className="text-xl mb-8">Providing compassionate, comprehensive healthcare for the entire family in Edmonton.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 {onBookAppointmentClick ? (
                   <button

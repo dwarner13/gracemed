@@ -2,7 +2,7 @@ import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import SEO from '../components/SEO';
 import ContactForm from '../components/ContactForm';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Printer } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -41,11 +41,21 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-1">Phone</h3>
                     <p className="text-gray-600">
-                      <a href="tel:+17804567890" className="hover:text-blue-600">780-456-7890</a>
+                      <a href="tel:+17806699215" className="hover:text-blue-600">780-669-9215</a>
                     </p>
                   </div>
                 </div>
-                
+
+                <div className="flex items-start">
+                  <div className="text-blue-600 mr-4">
+                    <Printer size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-1">Fax</h3>
+                    <p className="text-gray-600">780-798-2274</p>
+                  </div>
+                </div>
+
                 <div className="flex items-start">
                   <div className="text-blue-600 mr-4">
                     <Mail size={24} />
@@ -79,8 +89,8 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-1">Hours</h3>
                     <div className="text-gray-600">
-                      <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                      <p>Saturday: 9:00 AM - 2:00 PM</p>
+                      <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
+                      <p>Saturday: 10:00 AM - 5:00 PM</p>
                       <p>Sunday: Closed</p>
                     </div>
                   </div>

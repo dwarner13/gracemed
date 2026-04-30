@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, Printer } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Clinic Info */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Grace Family Medical Clinic</h3>
-            <p className="mb-4 text-gray-300">Providing quality healthcare services to the Edmonton community since 2005.</p>
+            <p className="mb-4 text-gray-300">Providing quality healthcare services to the Edmonton community.</p>
             <div className="flex space-x-4">
               <a href="https://facebook.com" className="text-gray-300 hover:text-white transition-colors">
                 <Facebook size={20} />
@@ -95,7 +95,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="mr-2 flex-shrink-0" />
-                <a href="tel:+17804567890" className="hover:underline">780-456-7890</a>
+                <a href="tel:+17806699215" className="hover:underline">780-669-9215</a>
+              </li>
+              <li className="flex items-center">
+                <Printer size={20} className="mr-2 flex-shrink-0" />
+                <span>Fax: 780-798-2274</span>
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="mr-2 flex-shrink-0" />
@@ -104,8 +108,8 @@ const Footer = () => {
               <li className="flex items-start">
                 <Clock size={20} className="mr-2 mt-1 flex-shrink-0" />
                 <div>
-                  <p>Monday-Friday: 8am-6pm</p>
-                  <p>Saturday: 9am-2pm</p>
+                  <p>Monday-Friday: 9am-7pm</p>
+                  <p>Saturday: 10am-5pm</p>
                   <p>Sunday: Closed</p>
                 </div>
               </li>

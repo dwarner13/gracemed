@@ -82,8 +82,8 @@ export const services: Service[] = [
       <p>When you visit our walk-in clinic, you'll be seen by one of our qualified healthcare providers who will assess your condition, provide appropriate treatment, and refer you to specialists if necessary. We strive to minimize wait times while ensuring each patient receives thorough and compassionate care.</p>
       
       <h3>Walk-in Clinic Hours</h3>
-      <p>Monday to Friday: 9:00 AM - 6:00 PM<br>
-      Saturday: 10:00 AM - 2:00 PM<br>
+      <p>Monday to Friday: 9:00 AM - 7:00 PM<br>
+      Saturday: 10:00 AM - 5:00 PM<br>
       Sunday: Closed</p>
       
       <p>No appointment necessary. Simply walk in during our operating hours, and we'll be happy to assist you.</p>

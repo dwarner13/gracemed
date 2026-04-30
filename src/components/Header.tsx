@@ -24,7 +24,7 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
           <div className="flex items-center space-x-4 mb-2 md:mb-0">
             <div className="flex items-center">
               <Phone size={16} className="mr-2" />
-              <a href="tel:+17804567890" className="hover:underline">780-456-7890</a>
+              <a href="tel:+17806699215" className="hover:underline">780-669-9215</a>
             </div>
             <div className="flex items-center">
               <MapPin size={16} className="mr-2" />
@@ -33,7 +33,7 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
           </div>
           <div className="flex items-center">
             <Clock size={16} className="mr-2" />
-            <span>Mon-Fri: 8am-6pm | Sat: 9am-2pm | Sun: Closed</span>
+            <span>Mon-Fri: 9am-7pm | Sat: 10am-5pm | Sun: Closed</span>
           </div>
         </div>
       </div>
