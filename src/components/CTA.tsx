@@ -44,11 +44,11 @@ const CTA = ({
           
           {showPhone && (
             <a 
-              href="tel:+17806699215" 
+              href="tel:+17806522144" 
               className="flex items-center text-white border-2 border-white hover:bg-blue-700 px-8 py-3 rounded-md font-medium text-lg transition duration-300"
             >
               <Phone size={20} className="mr-2" />
-              Call 780-669-9215
+              Call (780) 652-2144
             </a>
           )}
         </div>

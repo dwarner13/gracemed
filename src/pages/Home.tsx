@@ -4,9 +4,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import SEO from '../components/SEO';
 import CTA from '../components/CTA';
 import ServiceCard from '../components/ServiceCard';
-import Testimonial from '../components/Testimonial';
 import { services } from '../data/services';
-import { testimonials } from '../data/testimonials';
 import { Heart, Users, Clock, Award, ArrowRight } from 'lucide-react';
 
 interface HomeProps {
@@ -16,9 +14,6 @@ interface HomeProps {
 const Home = ({ onBookAppointmentClick }: HomeProps) => {
   // Featured services (first 3)
   const featuredServices = services.slice(0, 3);
-
-  // Featured testimonials (first 3)
-  const featuredTestimonials = testimonials.slice(0, 3);
 
   return (
     <HelmetProvider>
@@ -185,28 +180,6 @@ const Home = ({ onBookAppointmentClick }: HomeProps) => {
                 </Link>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">What Our Patients Say</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Don't just take our word for it. Here's what our patients have to say about their experience at Grace Family Medical Clinic.</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredTestimonials.map((testimonial) => (
-              <Testimonial 
-                key={testimonial.id}
-                quote={testimonial.quote}
-                name={testimonial.name}
-                title={testimonial.title}
-                image={testimonial.image}
-              />
-            ))}
           </div>
         </div>
       </section>

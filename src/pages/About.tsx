@@ -123,9 +123,9 @@ const About = () => {
             </div>
             <div className="order-1 md:order-2">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
-              <p className="text-gray-600 mb-4">Grace Family Medical Clinic was founded in 2005 by Dr. Sarah Johnson with a vision to provide comprehensive, patient-centered healthcare to the Edmonton community. What began as a small practice with just two physicians has grown into a trusted medical home for thousands of patients in the Edmonton area.</p>
-              <p className="text-gray-600 mb-4">Over the years, we have expanded our team and services to better meet the diverse healthcare needs of our growing patient population. Despite our growth, we have remained true to our founding principles of compassionate care, clinical excellence, and community service.</p>
-              <p className="text-gray-600">Today, Grace Family Medical Clinic is proud to be a leading healthcare provider in Edmonton, offering a wide range of medical services delivered by a team of dedicated healthcare professionals who are committed to improving the health and well-being of our community.</p>
+              <p className="text-gray-600 mb-4">Grace Family Medical Clinic was established with a vision to provide comprehensive, patient-centered healthcare to the Edmonton community.</p>
+              <p className="text-gray-600 mb-4">We are committed to compassionate care, clinical excellence, and community service, and we continue to grow our team and services to meet the diverse healthcare needs of the patients we serve.</p>
+              <p className="text-gray-600">Grace Family Medical Clinic offers a wide range of medical services delivered by a team of dedicated healthcare professionals who are committed to improving the health and well-being of our community.</p>
             </div>
           </div>
         </div>

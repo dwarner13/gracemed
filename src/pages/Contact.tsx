@@ -2,7 +2,7 @@ import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import SEO from '../components/SEO';
 import ContactForm from '../components/ContactForm';
-import { Phone, Mail, MapPin, Clock, Printer } from 'lucide-react';
+import { Phone, MapPin, Clock } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -41,33 +41,11 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-1">Phone</h3>
                     <p className="text-gray-600">
-                      <a href="tel:+17806699215" className="hover:text-blue-600">780-669-9215</a>
+                      <a href="tel:+17806522144" className="hover:text-blue-600">(780) 652-2144</a>
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="text-blue-600 mr-4">
-                    <Printer size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-1">Fax</h3>
-                    <p className="text-gray-600">780-798-2274</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="text-blue-600 mr-4">
-                    <Mail size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-1">Email</h3>
-                    <p className="text-gray-600">
-                      <a href="mailto:info@gracefamilymedicalclinic.com" className="hover:text-blue-600">info@gracefamilymedicalclinic.com</a>
-                    </p>
-                  </div>
-                </div>
-                
                 <div className="flex items-start">
                   <div className="text-blue-600 mr-4">
                     <MapPin size={24} />
@@ -75,8 +53,8 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-1">Address</h3>
                     <p className="text-gray-600">
-                      123 Medical Drive<br />
-                      Edmonton, AB T5J 1A1<br />
+                      14717 40 Ave NW<br />
+                      Edmonton, AB T6R 1N1<br />
                       Canada
                     </p>
                   </div>
@@ -89,9 +67,7 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-1">Hours</h3>
                     <div className="text-gray-600">
-                      <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
-                      <p>Saturday: 10:00 AM - 5:00 PM</p>
-                      <p>Sunday: Closed</p>
+                      <p>Please call the clinic for current hours.</p>
                     </div>
                   </div>
                 </div>
@@ -102,7 +78,7 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold text-gray-800 mb-4">Find Us</h3>
                 <div className="h-80 bg-gray-200 rounded-lg overflow-hidden">
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2370.7032357473397!2d-113.49603542326605!3d53.54610997246392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a02378c0b8e111%3A0x410c6d5d7c8b30e1!2sDowntown%20Edmonton%2C%20Edmonton%2C%20AB!5e0!3m2!1sen!2sca!4v1682456789012!5m2!1sen!2sca" 
+                    src="https://www.google.com/maps?q=14717+40+Ave+NW,+Edmonton,+AB+T6R+1N1&output=embed" 
                     width="100%" 
                     height="100%" 
                     style={{ border: 0 }} 

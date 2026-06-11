@@ -24,11 +24,11 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
           <div className="flex items-center space-x-4 mb-2 md:mb-0">
             <div className="flex items-center">
               <Phone size={16} className="mr-2" />
-              <a href="tel:+17806699215" className="hover:underline">780-669-9215</a>
+              <a href="tel:+17806522144" className="hover:underline">(780) 652-2144</a>
             </div>
             <div className="flex items-center">
               <MapPin size={16} className="mr-2" />
-              <span>123 Medical Drive, Edmonton, AB</span>
+              <span>14717 40 Ave NW, Edmonton, AB</span>
             </div>
           </div>
           <div className="flex items-center">

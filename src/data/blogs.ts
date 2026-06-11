@@ -87,7 +87,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>At Grace Family Medical Clinic, we're committed to providing comprehensive preventive care to help you maintain optimal health. If it's been more than a year since your last check-up, we encourage you to schedule an appointment today. Investing a small amount of time in preventive care now can lead to better health and quality of life for years to come.</p>
     `,
-    author: "Dr. Sarah Johnson",
+    author: "Grace Family Medical Clinic",
     date: "April 15, 2025",
     image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     categories: ["Preventative Care", "General Health"],
@@ -209,7 +209,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>While seasonal allergies can be challenging, especially in Edmonton's diverse climate, they can be effectively managed with the right approach. At Grace Family Medical Clinic, we're here to help you develop a personalized allergy management plan. Don't let allergies prevent you from enjoying all that our beautiful city has to offer throughout the changing seasons.</p>
     `,
-    author: "Dr. Michael Chen",
+    author: "Grace Family Medical Clinic",
     date: "March 22, 2025",
     image: "https://images.unsplash.com/photo-1513315849661-23219170a967?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     categories: ["Seasonal Health", "Allergies"],
@@ -387,7 +387,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Living well with diabetes requires ongoing attention and care, but with the right strategies and support, you can effectively manage your condition and lead a healthy, active life. At Grace Family Medical Clinic, we're committed to partnering with you on your diabetes management journey. If you have questions or need additional support with your diabetes care, please contact our office to schedule an appointment.</p>
     `,
-    author: "Dr. Amina Patel",
+    author: "Grace Family Medical Clinic",
     date: "February 10, 2025",
     image: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     categories: ["Chronic Disease Management", "Nutrition"],

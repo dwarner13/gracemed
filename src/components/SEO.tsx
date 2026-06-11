@@ -31,34 +31,15 @@ const SEO = ({
     name: 'Grace Family Medical Clinic',
     description: 'Family medical clinic in Edmonton providing comprehensive healthcare services.',
     url: siteUrl,
-    telephone: '+17806699215',
+    telephone: '+17806522144',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '123 Medical Drive',
+      streetAddress: '14717 40 Ave NW',
       addressLocality: 'Edmonton',
       addressRegion: 'AB',
-      postalCode: 'T5J 1A1',
+      postalCode: 'T6R 1N1',
       addressCountry: 'CA'
     },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '53.5461',
-      longitude: '-113.4938'
-    },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '09:00',
-        closes: '19:00'
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Saturday',
-        opens: '10:00',
-        closes: '17:00'
-      }
-    ],
     medicalSpecialty: [
       'Family Medicine',
       'Primary Care',
