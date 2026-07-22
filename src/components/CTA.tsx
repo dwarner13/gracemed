@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone } from 'lucide-react';
+import { clinic } from '../data/clinic';
 
 interface CTAProps {
   title?: string;
@@ -44,11 +45,11 @@ const CTA = ({
           
           {showPhone && (
             <a 
-              href="tel:+17806522144" 
+              href={clinic.phoneHref} 
               className="flex items-center text-white border-2 border-white hover:bg-blue-700 px-8 py-3 rounded-md font-medium text-lg transition duration-300"
             >
               <Phone size={20} className="mr-2" />
-              Call (780) 652-2144
+              Call {clinic.phoneDisplay}
             </a>
           )}
         </div>

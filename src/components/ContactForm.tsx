@@ -5,133 +5,224 @@ import { CheckCircle } from 'lucide-react';
 interface FormData {
   name: string;
   email: string;
-  phone: string;
-  subject: string;
+  phone?: string;
+  reason?: string;
+  'preferred-contact'?: string;
   message: string;
+  'bot-field'?: string;
 }
 
-const ContactForm = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
+interface ContactFormProps {
+  /** 'full' = contact page, 'compact' = shortened homepage version */
+  variant?: 'full' | 'compact';
+}
 
-  const onSubmit = (data: FormData) => {
-    // In a real implementation, you would send this data to your backend
-    console.log(data);
-    
-    // Simulate form submission
-    setTimeout(() => {
+// Encode form data the way Netlify expects (application/x-www-form-urlencoded)
+const encode = (data: Record<string, string>) =>
+  Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+
+const FORM_NAME = 'contact';
+
+const ContactForm = ({ variant = 'full' }: ContactFormProps) => {
+  const isCompact = variant === 'compact';
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<FormData>();
+
+  const onSubmit = async (data: FormData) => {
+    setSubmitError('');
+    // Honeypot: if the hidden field is filled, silently drop (likely a bot).
+    if (data['bot-field']) {
+      setIsSubmitted(true);
+      return;
+    }
+
+    const payload: Record<string, string> = { 'form-name': FORM_NAME };
+    Object.entries(data).forEach(([key, value]) => {
+      if (key !== 'bot-field' && value != null && value !== '') payload[key] = String(value);
+    });
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode(payload),
+      });
+      if (!res.ok) throw new Error('Network response was not ok');
       setIsSubmitted(true);
       reset();
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-    }, 1000);
+    } catch {
+      setSubmitError('Something went wrong sending your message. Please try again or call us directly.');
+    }
   };
 
-  return (
-    <div className="bg-white rounded-lg shadow-md p-4 md:p-5">
-      {isSubmitted ? (
-        <div className="flex flex-col items-center justify-center py-6">
-          <CheckCircle size={42} className="text-green-500 mb-3" />
-          <h3 className="text-lg font-semibold text-gray-800 mb-1">Thank You!</h3>
-          <p className="text-sm text-gray-600 text-center">
-            Your message has been sent successfully. We'll get back to you as soon as possible.
+  const inputBase =
+    'w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500';
+
+  if (isSubmitted) {
+    return (
+      <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-md">
+        <div className="flex flex-col items-center justify-center py-6 text-center">
+          <CheckCircle size={48} className="mb-3 text-green-500" />
+          <h3 className="mb-1 text-xl font-semibold text-gray-900">Thank You!</h3>
+          <p className="max-w-md text-gray-600">
+            Your message has been sent successfully. A member of our team will get back to you as soon
+            as possible during clinic hours.
           </p>
         </div>
-      ) : (
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
-            <div>
-              <label htmlFor="name" className="block text-sm text-gray-700 font-medium mb-1">
-                Full Name *
-              </label>
-              <input
-                type="text"
-                id="name"
-                className={`w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
-                {...register('name', { required: 'Name is required' })}
-              />
-              {errors.name && (
-                <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
-              )}
-            </div>
-            
-            <div>
-              <label htmlFor="email" className="block text-sm text-gray-700 font-medium mb-1">
-                Email Address *
-              </label>
-              <input
-                type="email"
-                id="email"
-                className={`w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
-                {...register('email', { 
-                  required: 'Email is required',
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'Invalid email address'
-                  }
-                })}
-              />
-              {errors.email && (
-                <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
-              )}
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
-            <div>
-              <label htmlFor="phone" className="block text-sm text-gray-700 font-medium mb-1">
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                {...register('phone')}
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="subject" className="block text-sm text-gray-700 font-medium mb-1">
-                Subject *
-              </label>
-              <input
-                type="text"
-                id="subject"
-                className={`w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.subject ? 'border-red-500' : 'border-gray-300'}`}
-                {...register('subject', { required: 'Subject is required' })}
-              />
-              {errors.subject && (
-                <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>
-              )}
-            </div>
-          </div>
-          
-          <div className="mb-3">
-            <label htmlFor="message" className="block text-sm text-gray-700 font-medium mb-1">
-              Message *
+      </div>
+    );
+  }
+
+  return (
+    <div className="rounded-2xl border border-gray-100 bg-white p-5 shadow-md md:p-6">
+      {/*
+        Netlify form. Field names must stay in sync with the hidden detection
+        form in index.html so Netlify registers them at build time.
+      */}
+      <form
+        name={FORM_NAME}
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+      >
+        {/* Netlify hidden inputs */}
+        <input type="hidden" name="form-name" value={FORM_NAME} />
+        <p className="hidden">
+          <label>
+            Don't fill this out if you're human: <input {...register('bot-field')} />
+          </label>
+        </p>
+
+        <div className="mb-3 grid grid-cols-1 gap-3 md:grid-cols-2">
+          <div>
+            <label htmlFor="cf-name" className="mb-1 block text-sm font-medium text-gray-700">
+              Full Name *
             </label>
-            <textarea
-              id="message"
-              rows={4}
-              className={`w-full px-3 py-2 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
-              {...register('message', { required: 'Message is required' })}
-            ></textarea>
-            {errors.message && (
-              <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>
-            )}
+            <input
+              type="text"
+              id="cf-name"
+              autoComplete="name"
+              className={`${inputBase} ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+              {...register('name', { required: 'Name is required' })}
+            />
+            {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name.message}</p>}
           </div>
-          
-          <button
-            type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-md font-medium text-sm transition duration-300"
-          >
-            Send Message
-          </button>
-        </form>
-      )}
+
+          <div>
+            <label htmlFor="cf-email" className="mb-1 block text-sm font-medium text-gray-700">
+              Email Address *
+            </label>
+            <input
+              type="email"
+              id="cf-email"
+              autoComplete="email"
+              className={`${inputBase} ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+              {...register('email', {
+                required: 'Email is required',
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: 'Please enter a valid email address',
+                },
+              })}
+            />
+            {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>}
+          </div>
+        </div>
+
+        {!isCompact && (
+          <>
+            <div className="mb-3 grid grid-cols-1 gap-3 md:grid-cols-2">
+              <div>
+                <label htmlFor="cf-phone" className="mb-1 block text-sm font-medium text-gray-700">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="cf-phone"
+                  autoComplete="tel"
+                  className={`${inputBase} border-gray-300`}
+                  {...register('phone')}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="cf-preferred" className="mb-1 block text-sm font-medium text-gray-700">
+                  Preferred Contact Method
+                </label>
+                <select
+                  id="cf-preferred"
+                  className={`${inputBase} border-gray-300 bg-white`}
+                  {...register('preferred-contact')}
+                  defaultValue="Email"
+                >
+                  <option value="Email">Email</option>
+                  <option value="Phone">Phone</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="cf-reason" className="mb-1 block text-sm font-medium text-gray-700">
+                Reason for Contact
+              </label>
+              <select
+                id="cf-reason"
+                className={`${inputBase} border-gray-300 bg-white`}
+                {...register('reason')}
+                defaultValue="General Inquiry"
+              >
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Appointment Request">Appointment Request</option>
+                <option value="Prescription Renewal">Prescription Renewal</option>
+                <option value="Billing or Insurance">Billing or Insurance</option>
+                <option value="Feedback">Feedback</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </>
+        )}
+
+        <div className="mb-3">
+          <label htmlFor="cf-message" className="mb-1 block text-sm font-medium text-gray-700">
+            Message *
+          </label>
+          <textarea
+            id="cf-message"
+            rows={isCompact ? 3 : 5}
+            className={`${inputBase} ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
+            {...register('message', { required: 'Message is required' })}
+          ></textarea>
+          {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message.message}</p>}
+        </div>
+
+        {submitError && (
+          <p className="mb-3 rounded-md bg-red-50 px-3 py-2 text-sm text-red-600">{submitError}</p>
+        )}
+
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="inline-flex items-center justify-center rounded-md bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white transition duration-300 hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-70"
+        >
+          {isSubmitting ? 'Sending…' : 'Send Message'}
+        </button>
+
+        {/* Privacy notice */}
+        <p className="mt-4 text-xs leading-relaxed text-gray-500">
+          Please do not include confidential or sensitive medical information in this contact form. If
+          you require urgent medical assistance, call 911 or visit your nearest emergency department.
+        </p>
+      </form>
     </div>
   );
 };

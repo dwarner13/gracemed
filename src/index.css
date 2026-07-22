@@ -2,6 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Scroll reveal animation (used by <Reveal />) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* One-shot hero entrance (above-the-fold, not tied to IntersectionObserver) */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-fade {
+  animation: heroFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade {
+    animation: none;
+  }
+}
+
 @layer components {
   .service-rich-content h2 {
     @apply text-2xl md:text-3xl font-bold text-gray-800 mt-2 mb-4;

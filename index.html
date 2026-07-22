@@ -2,12 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/logo-mark.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#2563eb" />
+
     <title>Grace Family Medical Clinic | Family Doctor Edmonton</title>
   </head>
   <body>
-    <!-- Hidden Netlify form for build-time detection -->
+    <!-- Hidden Netlify forms for build-time detection -->
     <form name="appointment-booking" netlify netlify-honeypot="bot-field" hidden>
       <input name="name" />
       <input name="phone" />
@@ -15,6 +24,15 @@
       <input name="preferred-date" />
       <input name="preferred-time" />
       <input name="reason" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input name="name" />
+      <input name="email" />
+      <input name="phone" />
+      <input name="reason" />
+      <input name="preferred-contact" />
       <textarea name="message"></textarea>
     </form>
 

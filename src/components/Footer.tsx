@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Phone, MapPin, Clock, Printer, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { clinic } from '../data/clinic';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -91,11 +92,19 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin size={20} className="mr-2 mt-1 flex-shrink-0" />
-                <span>14717 40 Ave NW<br />Edmonton, AB T6R 1N1</span>
+                <span>{clinic.addressLine1}<br />{clinic.addressLine2}</span>
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="mr-2 flex-shrink-0" />
-                <a href="tel:+17806522144" className="hover:underline">(780) 652-2144</a>
+                <a href={clinic.phoneHref} className="hover:underline">{clinic.phoneDisplay}</a>
+              </li>
+              <li className="flex items-center">
+                <Printer size={20} className="mr-2 flex-shrink-0" />
+                <span>Fax: {clinic.faxDisplay}</span>
+              </li>
+              <li className="flex items-center">
+                <Mail size={20} className="mr-2 flex-shrink-0" />
+                <a href={clinic.emailHref} className="text-sm hover:underline break-words">{clinic.email}</a>
               </li>
               <li className="flex items-start">
                 <Clock size={20} className="mr-2 mt-1 flex-shrink-0" />

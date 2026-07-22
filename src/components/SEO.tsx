@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { clinic } from '../data/clinic';
 
 interface SEOProps {
   title: string;
@@ -28,17 +29,19 @@ const SEO = ({
   const defaultSchema = {
     '@context': 'https://schema.org',
     '@type': 'MedicalClinic',
-    name: 'Grace Family Medical Clinic',
+    name: clinic.name,
     description: 'Family medical clinic in Edmonton providing comprehensive healthcare services.',
     url: siteUrl,
-    telephone: '+17806522144',
+    telephone: clinic.phoneHref.replace('tel:', ''),
+    faxNumber: clinic.faxHref.replace('tel:', ''),
+    email: clinic.email,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '14717 40 Ave NW',
-      addressLocality: 'Edmonton',
-      addressRegion: 'AB',
-      postalCode: 'T6R 1N1',
-      addressCountry: 'CA'
+      streetAddress: clinic.streetAddress,
+      addressLocality: clinic.city,
+      addressRegion: clinic.region,
+      postalCode: clinic.postalCode,
+      addressCountry: clinic.country
     },
     medicalSpecialty: [
       'Family Medicine',

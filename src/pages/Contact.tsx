@@ -2,7 +2,8 @@ import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import SEO from '../components/SEO';
 import ContactForm from '../components/ContactForm';
-import { Phone, MapPin, Clock } from 'lucide-react';
+import { clinic } from '../data/clinic';
+import { Phone, Printer, Mail, MapPin, Clock } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -41,7 +42,29 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-1">Phone</h3>
                     <p className="text-gray-600">
-                      <a href="tel:+17806522144" className="hover:text-blue-600">(780) 652-2144</a>
+                      <a href={clinic.phoneHref} className="hover:text-blue-600">{clinic.phoneDisplay}</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="text-blue-600 mr-4">
+                    <Printer size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-1">Fax</h3>
+                    <p className="text-gray-600">{clinic.faxDisplay}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="text-blue-600 mr-4">
+                    <Mail size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-1">Email</h3>
+                    <p className="text-gray-600">
+                      <a href={clinic.emailHref} className="hover:text-blue-600 break-all">{clinic.email}</a>
                     </p>
                   </div>
                 </div>

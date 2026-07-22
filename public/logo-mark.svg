@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Grace Family Medical Clinic logo">
+  <title>Grace Family Medical Clinic</title>
+  <!-- Hexagon badge (flat-top) -->
+  <polygon points="461,262 358.5,439.5 153.5,439.5 51,262 153.5,84.5 358.5,84.5"
+           fill="#ffffff" stroke="#2563eb" stroke-width="16" stroke-linejoin="round"/>
+  <!-- Arch over the family -->
+  <path d="M150 214 Q256 118 362 214" fill="none" stroke="#2563eb" stroke-width="11" stroke-linecap="round"/>
+  <!-- Medical cross on top of the arch -->
+  <g fill="#2563eb">
+    <rect x="242" y="70" width="28" height="72" rx="8"/>
+    <rect x="220" y="92" width="72" height="28" rx="8"/>
+  </g>
+  <!-- Family: two children (outer) + two adults (inner), holding hands -->
+  <g fill="#1e40af">
+    <!-- child left -->
+    <circle cx="158" cy="250" r="19"/>
+    <path d="M136 372 L136 288 Q136 274 158 274 Q180 274 180 288 L180 372 Z"/>
+    <!-- adult left -->
+    <circle cx="216" cy="228" r="26"/>
+    <path d="M186 372 L186 268 Q186 250 216 250 Q246 250 246 268 L246 372 Z"/>
+    <!-- adult right -->
+    <circle cx="296" cy="228" r="26"/>
+    <path d="M266 372 L266 268 Q266 250 296 250 Q326 250 326 268 L326 372 Z"/>
+    <!-- child right -->
+    <circle cx="354" cy="250" r="19"/>
+    <path d="M332 372 L332 288 Q332 274 354 274 Q376 274 376 288 L376 372 Z"/>
+  </g>
+</svg>

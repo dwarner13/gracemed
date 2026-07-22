@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X, Phone, Clock, MapPin } from 'lucide-react';
+import { clinic } from '../data/clinic';
 
 interface HeaderProps {
   onBookAppointmentClick?: () => void;
@@ -24,11 +25,11 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
           <div className="flex items-center space-x-4 mb-2 md:mb-0">
             <div className="flex items-center">
               <Phone size={16} className="mr-2" />
-              <a href="tel:+17806522144" className="hover:underline">(780) 652-2144</a>
+              <a href={clinic.phoneHref} className="hover:underline">{clinic.phoneDisplay}</a>
             </div>
             <div className="flex items-center">
               <MapPin size={16} className="mr-2" />
-              <span>14717 40 Ave NW, Edmonton, AB</span>
+              <span>{clinic.addressLine1}, {clinic.city}, {clinic.region}</span>
             </div>
           </div>
           <div className="flex items-center">
@@ -41,12 +42,19 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
       {/* Main Navigation */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-blue-600">Grace Family Medical Clinic</span>
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src="/logo-mark.svg"
+              alt="Grace Family Medical Clinic logo"
+              width={44}
+              height={44}
+              className="h-11 w-11 shrink-0"
+            />
+            <span className="whitespace-nowrap text-lg font-bold leading-tight text-blue-600 sm:text-xl xl:text-2xl">Grace Family Medical Clinic</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden space-x-6 lg:flex xl:space-x-8">
             <NavLink to="/" className={({ isActive }) => isActive ? activeClass : inactiveClass}>
               Home
             </NavLink>
@@ -68,7 +76,7 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
           </nav>
 
           {/* Book Appointment Button */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             {onBookAppointmentClick ? (
               <button
                 type="button"
@@ -86,7 +94,7 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-gray-700 focus:outline-none"
+            className="lg:hidden text-gray-700 focus:outline-none"
             onClick={toggleMenu}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -95,7 +103,7 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4">
+          <nav className="lg:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
               <NavLink 
                 to="/" 
