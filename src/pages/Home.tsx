@@ -27,11 +27,7 @@ import {
   MapPin,
 } from 'lucide-react';
 
-interface HomeProps {
-  onBookAppointmentClick?: () => void;
-}
-
-const Home = ({ onBookAppointmentClick }: HomeProps) => {
+const Home = () => {
   // Featured services (first 3)
   const featuredServices = services.slice(0, 3);
 
@@ -76,22 +72,14 @@ const Home = ({ onBookAppointmentClick }: HomeProps) => {
               preventive healthcare, and compassionate care for patients of all ages.
             </p>
             <div className="hero-fade mt-9 flex flex-col gap-4 sm:flex-row" style={{ animationDelay: '240ms' }}>
-              {onBookAppointmentClick ? (
-                <button
-                  type="button"
-                  onClick={onBookAppointmentClick}
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-7 py-3.5 text-lg font-semibold text-blue-700 shadow-lg shadow-blue-900/20 transition duration-300 hover:-translate-y-0.5 hover:bg-blue-50 hover:shadow-xl"
-                >
-                  <Calendar size={20} /> Book Appointment
-                </button>
-              ) : (
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-7 py-3.5 text-lg font-semibold text-blue-700 shadow-lg shadow-blue-900/20 transition duration-300 hover:-translate-y-0.5 hover:bg-blue-50 hover:shadow-xl"
-                >
-                  <Calendar size={20} /> Book Appointment
-                </Link>
-              )}
+              <a
+                href={clinic.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-7 py-3.5 text-lg font-semibold text-blue-700 shadow-lg shadow-blue-900/20 transition duration-300 hover:-translate-y-0.5 hover:bg-blue-50 hover:shadow-xl"
+              >
+                <Calendar size={20} /> Book Appointment
+              </a>
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/80 px-7 py-3.5 text-lg font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/10"
@@ -452,7 +440,7 @@ const Home = ({ onBookAppointmentClick }: HomeProps) => {
       </section>
 
       {/* CTA Section */}
-      <CTA onButtonClick={onBookAppointmentClick} />
+      <CTA />
     </HelmetProvider>
   );
 };

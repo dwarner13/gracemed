@@ -3,11 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { Menu, X, Phone, Clock, MapPin } from 'lucide-react';
 import { clinic } from '../data/clinic';
 
-interface HeaderProps {
-  onBookAppointmentClick?: () => void;
-}
-
-const Header = ({ onBookAppointmentClick }: HeaderProps) => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -77,19 +73,14 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
 
           {/* Book Appointment Button */}
           <div className="hidden lg:block">
-            {onBookAppointmentClick ? (
-              <button
-                type="button"
-                onClick={onBookAppointmentClick}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition duration-300"
-              >
-                Book Appointment
-              </button>
-            ) : (
-              <Link to="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition duration-300">
-                Book Appointment
-              </Link>
-            )}
+            <a
+              href={clinic.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition duration-300"
+            >
+              Book Appointment
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -147,26 +138,15 @@ const Header = ({ onBookAppointmentClick }: HeaderProps) => {
               >
                 Contact
               </NavLink>
-              {onBookAppointmentClick ? (
-                <button
-                  type="button"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition duration-300 text-center"
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    onBookAppointmentClick();
-                  }}
-                >
-                  Book Appointment
-                </button>
-              ) : (
-                <Link 
-                  to="/contact" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition duration-300 text-center"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Book Appointment
-                </Link>
-              )}
+              <a
+                href={clinic.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition duration-300 text-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Book Appointment
+              </a>
             </div>
           </nav>
         )}

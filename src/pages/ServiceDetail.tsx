@@ -61,12 +61,14 @@ const ServiceDetail = () => {
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">{service.title}</h1>
             <p className="text-lg md:text-xl text-blue-50 max-w-3xl mx-auto">{service.shortDescription}</p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link
-                to="/contact"
+              <a
+                href={clinic.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center rounded-md bg-white px-6 py-3 text-blue-700 font-semibold hover:bg-blue-50 transition"
               >
                 Book Appointment <ArrowRight size={18} className="ml-2" />
-              </Link>
+              </a>
               <a
                 href={clinic.phoneHref}
                 className="inline-flex items-center rounded-md border border-white/70 px-6 py-3 font-semibold text-white hover:bg-white/10 transition"
