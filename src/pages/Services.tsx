@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import SEO from '../components/SEO';
 import ServiceCard from '../components/ServiceCard';
 import CTA from '../components/CTA';
 import { services } from '../data/services';
+import { clinic } from '../data/clinic';
+import { FileText, CheckCircle2, Calendar } from 'lucide-react';
+
+const MEDICAL_FORMS = [
+  'CPP Disability (CPP-D)',
+  'AISH medical forms',
+  'Short-term and long-term disability forms',
+  'Private insurance forms, including Canada Life and other insurers',
+  "Driver's medical examinations",
+  'Workplace and employment medical forms',
+  'Other medical reports and documentation',
+];
 
 const Services = () => {
+  // Scroll to the Medical Forms section when linked via /services#medical-forms
+  useEffect(() => {
+    if (window.location.hash === '#medical-forms') {
+      const el = document.getElementById('medical-forms');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
   return (
     <HelmetProvider>
       <SEO 
@@ -43,6 +63,47 @@ const Services = () => {
                 slug={service.slug}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Medical Forms & Assessments */}
+      <section id="medical-forms" className="scroll-mt-24 py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl">
+            <div className="text-center mb-10">
+              <span className="inline-flex items-center gap-2 rounded-full bg-blue-100 px-4 py-1 text-sm font-semibold text-blue-700">
+                <FileText size={15} /> Documentation Support
+              </span>
+              <h2 className="mt-4 text-3xl font-bold text-gray-800">Medical Forms &amp; Assessments</h2>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg shadow-md">
+              <p className="text-gray-600 mb-6">
+                Our physicians provide medical assessments and assistance with a range of medical,
+                disability and insurance forms, including:
+              </p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+                {MEDICAL_FORMS.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-gray-700">
+                    <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-blue-600" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-gray-600 mb-8">
+                An appointment and medical assessment may be required. Fees may apply depending on the
+                type and complexity of the form.
+              </p>
+              <a
+                href={clinic.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-blue-600 px-6 py-3 font-semibold text-white transition duration-300 hover:bg-blue-700"
+              >
+                <Calendar size={18} /> Book an Appointment
+              </a>
+            </div>
           </div>
         </div>
       </section>

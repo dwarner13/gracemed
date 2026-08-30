@@ -6,8 +6,8 @@ export const clinic = {
   name: 'Grace Family Medical Clinic',
 
   // Phone
-  phoneDisplay: '(780) 669-9215',
-  phoneHref: 'tel:+17806699215',
+  phoneDisplay: '(780) 652-2144',
+  phoneHref: 'tel:+17806522144',
 
   // Fax
   faxDisplay: '(780) 798-2274',

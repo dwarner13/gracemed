@@ -20,6 +20,9 @@ import {
   ShieldCheck,
   Sparkles,
   DoorClosed,
+  DoorOpen,
+  UserPlus,
+  FileText,
   Stethoscope,
   Smile,
   CheckCircle2,
@@ -88,6 +91,66 @@ const Home = () => {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Accepting New Patients & Walk-Ins — priority callout directly under hero */}
+      <section className="border-b border-blue-100 bg-blue-50 py-14 lg:py-16">
+        <div className="container mx-auto px-4">
+          <Reveal className="mx-auto max-w-5xl">
+            <div className="rounded-2xl bg-white p-8 shadow-lg ring-1 ring-blue-100 md:p-10">
+              <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
+                <div className="text-center md:text-left">
+                  <div className="mb-4 flex flex-wrap justify-center gap-2 md:justify-start">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-green-700">
+                      <UserPlus size={15} /> Accepting New Patients
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-3 py-1 text-sm font-semibold text-blue-700">
+                      <DoorOpen size={15} /> Walk-Ins Welcome
+                    </span>
+                  </div>
+                  <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                    Accepting New Patients &amp; Walk-Ins
+                  </h2>
+                  <p className="mt-3 max-w-2xl text-lg text-gray-600">
+                    We are currently accepting new patients and walk-in appointments. Contact the
+                    clinic or book an appointment today.
+                  </p>
+                </div>
+                <div className="shrink-0">
+                  <a
+                    href={clinic.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-blue-600/25 transition duration-300 hover:-translate-y-0.5 hover:bg-blue-700"
+                  >
+                    <Calendar size={20} /> Book an Appointment
+                  </a>
+                </div>
+              </div>
+
+              {/* Medical Forms & Assessments — concise homepage mention */}
+              <div className="mt-8 border-t border-gray-100 pt-8">
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <h3 className="flex items-center gap-2 text-xl font-semibold text-gray-900">
+                      <FileText size={20} className="text-blue-600" /> Medical Forms &amp; Assessments
+                    </h3>
+                    <p className="mt-2 max-w-2xl text-gray-600">
+                      Our physicians can assist with CPP Disability, AISH, insurance and disability
+                      forms, driver's medicals, workplace forms and other medical documentation.
+                    </p>
+                  </div>
+                  <Link
+                    to="/services#medical-forms"
+                    className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg border-2 border-blue-600 px-6 py-3 font-semibold text-blue-600 transition duration-300 hover:bg-blue-600 hover:text-white"
+                  >
+                    View Forms &amp; Assessments <ArrowRight size={18} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
